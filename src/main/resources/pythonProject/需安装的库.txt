@@ -1,0 +1,6 @@
+jieba
+wordcloud
+matplotlib
+random
+imageio
+wheel

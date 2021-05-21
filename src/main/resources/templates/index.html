@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+          crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/comment.css}">
+    <link rel="stylesheet" th:href="@{/css/section.css}">
+    <script th:src="@{/js/jQuery.min.js}"></script>
+    <script th:src="@{/js/sectionbg.js}"></script>
+    <script th:src="@{/js/comment.js}"></script>
+    <style>
+        .nav .nav-year{
+            width: 1000px;
+        }
+        .bottom{
+            position: relative;
+            width: 80%;
+            height: 50px;
+            margin: 150px auto;
+            border-top: 1px solid rgba(117, 115, 115, 0.3);
+        }
+        .bottom .publish{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            color: rgb(221, 17, 136);
+            font-size: 15px;
+        }
+        .bottom .copyright{
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+
+        }
+        .comment-content textarea{
+            top: 25px;
+        }
+        .comment-content li #comment-like{
+            top: 135px;
+        }
+        .comment-content li h2{
+            margin-left: 55px;
+            font-size: 15px;
+            font-weight: 800;
+        }
+        .comment-hot{
+            border-radius: 50%;
+        }
+        .comment-content li img{
+            border-radius: 50%;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="nav">
+        <div >
+            <a class="theme" th:href="@{/homePage}">
+                百年荣光路，最美看今朝
+            </a>
+        </div>
+        <ul class="nav-year">
+            <li><a href="#bg1">1921</a></li>
+            <li><a href="#bg2">1949</a></li>
+            <li><a href="#bg3">1978</a></li>
+            <li><a href="#bg4">2021</a></li>
+            <li><a href="#bg5">留言</a></li>
+
+        </ul>
+    </nav>
+
+    <section class="section">
+
+        <div class="section-index">
+
+            <div class="world">
+                这盛世<br>
+                如您所愿 ！
+            </div>
+
+            <div class="music">
+                <img th:src="@{/image/record.png}" alt="">
+                <audio controls autoplay loop>
+                    <source th:src="@{/audio/01.mp3}">
+                </audio>
+            </div>
+
+        </div>
+
+        <div class="section-tips"  id="history">
+<!--            <h2 class="title">党史</h2>-->
+        </div>
+
+        <div class="section-bg" id="bg1"></div>
+        <div class="section-tips">
+            <h1 class="time">1921年(建党)</h1>
+            <ul class="event">
+                <li><p>1921年浙江嘉兴南湖上的那条游船见证了伟大时刻。</p></li>
+                <li><p>1921年7月23日中国共产党第一次全国代表大会在上海举行。</p></li>
+                <li><p>从此，中国出现了完全新式、以共产主义为目的、以马列主义为行动指南、统一的工人阶级政党——中国共产党。</p></li>
+            </ul>
+        </div>
+
+        <div class="section-bg" id="bg2"></div>
+        <div class="section-tips">
+            <h1 class="time">1949年(新中国成立)</h1>
+            <ul>
+                <li>
+                    <p>1949年，北京。解放战争的硝烟在乍现的黎明曙光前，逐渐消散。</p>
+                </li>
+                <li>
+                    <p>1949年10月1日，30万军民齐聚天安门广场，均一门心思扑在了一件事上——准备开国大典。</p>
+                </li>
+                <li>
+                    <p>人民领袖毛泽东一字一顿，用高亢的语调庄严宣布：“中华人民共和国中央人民政府今天成立了！”</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-bg" id="bg3"></div>
+        <div class="section-tips">
+            <h1 class="time">1978年(改革开放)</h1>
+            <ul>
+                <li>
+                    <p>改革开放,是我们党在中国社会主义建设的关键时期的伟大抉择,是我们党在新的时代条件下带领全国人民进行的新的伟大革命,是决定中国命运的历史选择。</p>
+                </li>
+                <li>
+                    <p>我国成功实现了从高度集中的计划经济体制到充满活力的社会主义市场经济体制、从封闭半封闭到全方位开放的伟大历史转折。</p>
+                </li>
+                <li>
+                    <p>改革开放是决定当代中国命运的关键扶择,是发展中国特色社会主义、实现中华民族伟大复兴的必由之路;</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-bg" id="bg4"></div>
+        <div class="section-tips" id="bg5">
+            <h1 class="time">2021年(建党100周年)</h1>
+            <ul>
+                <li>
+                    <p>今年，是中国共产党的第一个一百年。</p>
+                </li>
+                <li>
+                    <p>我们正处于最好的时代，肩负着实现中华民族伟大复兴的历史重任。</p>
+                </li>
+                <li>
+                    <p>不忘百年路，开启新征程。我们要在奋斗的年纪砥砺前行，实现自身的价值的同时，推进中国民族伟大复兴！</p>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <div class="comment">
+
+        <div class="comment-hot">
+        </div>
+
+        <div class="comment-show" id="comment">
+            <form th:action="@{/add}" th:object="${comment}" method="post" class="comment-post">
+                <textarea type="text" cols="80" rows="5" class="comment-textarea form-control"  placeholder="我想对党说" th:field="*{comment}"></textarea>
+                <button type="submit" class="btn btn-info comment-submit">留言</button><!-- 引用于bootstrap -->
+            </form>
+        </div>
+
+        <ul class="comment-content">
+            <li th:each="comment:${list}">
+                <img src="/image/91.png" alt="">
+                <h2 th:text="${comment.username}"></h2>
+                <textarea name="" id="" cols="80" rows="5" readonly="readonly" th:text="${comment.comment}"></textarea>
+                <span class="glyphicon glyphicon-heart-empty" id="comment-like" aria-hidden="true"></span>
+            </li>
+        </ul>
+
+        <div class="bottom">
+            <div class="publish">亚洲天团工作室出品———冲鸭！！</div>
+            <div class="copyright"> 2021 &nbsp;&nbsp; 创想秀, CopyRight----------lzy、wjl、ly</div>
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

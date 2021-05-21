@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script th:src="@{/js/jQuery.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+          crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" th:href="@{/css/signin.css}">
+</head>
+<body>
+
+  <div class="cover"></div>
+
+    <nav class="nav"> 
+      <ul class="nav-back">
+          <li class="nav-signup"><a th:href="@{/toLogin}">登录</a></li>
+      </ul>
+    </nav>
+
+    <div class="signin">
+      <form class="form-signin" th:action="@{/registerUser}" method="post">
+        <h2 class="signin-title">注册</h2>
+<!--          <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>-->
+          <div class="form-group">
+          <label for="exampleInputName2">username</label>
+          <div class="successed-signin"></div>
+          <div class="failed-signin"></div>
+          <div class="failed-tips">
+            <div class="failed-inner">
+              不能包含空格的2-8个字符
+            </div>
+            <div class="failed-arrow"></div>
+          </div>
+<!--          <input type="text" class="form-control username" id="exampleInputName2" placeholder="username">-->
+            <input type="text" name="username" class="form-control username" id="exampleInputName2" placeholder="请输入用户名">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <div class="successed-signin"></div>
+          <div class="failed-signin"></div>
+          <div class="failed-tips">
+            <div class="failed-inner">
+              必须且只能包含数字、小写字母和大写字母的3-16个字符！
+            </div>
+            <div class="failed-arrow"></div>
+          </div>
+          <!-- <div class="tooltip top" role="tooltip">
+            <div class="tooltip-arrow"></div>
+            <div class="tooltip-inner">
+              必须且只能包含数字、小写字母和大写字母！
+            </div>
+          </div> -->
+
+<!--          <input type="password" class="form-control passward1" id="exampleInputPassword1" placeholder="Password">-->
+            <input type="test" name="password" class="form-control passward1" id="exampleInputPassword1" placeholder="请输入密码">
+        </div>
+
+<!--        <div class="form-group">-->
+<!--            <label for="exampleInputPassword1">Password again</label>-->
+<!--            <div class="successed-signin"></div>-->
+<!--            <div class="failed-signin"></div>-->
+<!--            <div class="failed-tips">-->
+<!--              <div class="failed-inner">-->
+<!--                必须和上次输入的密码一致！-->
+<!--              </div>-->
+<!--              <div class="failed-arrow"></div>-->
+<!--            </div>-->
+<!--            <input type="password" class="form-control passward2" id="exampleInputPassword1" placeholder="Password">-->
+<!--        </div>-->
+
+<!--          <div class="form-group">-->
+<!--            <label for="exampleInputName2">Email address</label>-->
+<!--            <div class="successed-signin"></div>-->
+<!--            <div class="failed-signin"></div>-->
+<!--            <div class="failed-tips">-->
+<!--              <div class="failed-inner">-->
+<!--                  请至少在电子邮箱地址中包含“@”和“.”！-->
+<!--              </div>-->
+<!--              <div class="failed-arrow"></div>-->
+<!--            </div>-->
+<!--            <input type="text" class="form-control Email" id="exampleInputName2" placeholder="Email">-->
+<!--          </div>-->
+
+        <button type="submit" class="btn btn-default signin-btn disabled">注册</button>
+        <div class="signin-tips"></div>
+      </form>
+    </div>
+
+<!--      <div class="container" style="width: 400px">-->
+<!--          <form class="form-signin" th:action="@{/registerUser}" method="post">-->
+<!--              <h2 class="form-signin-heading" style="margin-bottom: 7px;display: inline">请注册</h2>-->
+<!--              <a type="button" class="btn" th:href="@{/toLogin}" style="margin-bottom: 5px;margin-left: 140px;font-size: 18px">返回</a>-->
+<!--              <br>-->
+<!--              <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>-->
+<!--              <input type="text" name="username" class="form-control" placeholder="请输入用户名" required autofocus minlength="5" maxlength="12" >-->
+<!--              <br>-->
+<!--              <input type="test" name="password" class="form-control" placeholder="请输入密码" required onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" minlength="5" maxlength="12">-->
+<!--              <br>-->
+<!--              <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>-->
+<!--          </form>-->
+<!--      </div>-->
+
+
+    <!-- 鼠标聚焦变换css -->
+    <script>
+      $(function(){
+          $(".form-group input").mouseover(function(){
+              $(this).css({
+                  "backgroundColor" : "#3b3b3b",
+                  "borderColor" : "skyblue",
+              })
+          })
+          $(".form-group input").mouseleave(function(){
+              if(!$(this).is(":focus")){
+                  $(this).css({
+                      "backgroundColor" : "#121212",
+                      "borderColor" : "#e5e9ef",
+                  })
+              }
+          })
+          $(".form-group input").focus(function(){
+              $(this).css({
+                  "backgroundColor" : "#3b3b3b",
+                  "borderColor" : "skyblue",
+              })
+          })
+          $(".form-group input").blur(function(){
+              $(this).css({
+                  "backgroundColor" : "#121212",
+                  "borderColor" : "#e5e9ef",
+              })
+          })
+      })
+  </script>
+
+      <!-- 防止回车取消数据 -->
+      <script>
+        $(function(){
+          document.onkeydown = function(event) {
+          var target, code, tag;
+          if (!event) {
+            event = window.event; //针对ie浏览器
+            target = event.srcElement;
+            code = event.keyCode;
+            if (code == 13) {
+                tag = target.tagName;
+                if (tag == "TEXTAREA") { return true; }
+                else { return false; }
+            }
+        }
+        else {
+            target = event.target; //针对遵循w3c标准的浏览器，如Firefox
+            code = event.keyCode;
+            if (code == 13) {
+                tag = target.tagName;
+                if (tag == "INPUT") { return false; }
+                else { return true; }
+            }
+        }
+    };
+        })
+      </script>
+
+      <!-- 正则表达式 -->
+      <script>
+          $(function(){
+
+              var flag = 0;//判断四个注册框的填写正确性
+              function RAG(obj,rag){
+
+                  $("."+obj).blur(function(){
+
+                      if(rag.test($("."+obj).val()) == true)
+                      {
+                          flag++;
+                          $("."+obj).siblings(".successed-signin").fadeIn(1000);
+                      }
+                      else {
+                          $("."+obj).siblings(".failed-tips").fadeIn(1000);
+                          $("."+obj).siblings(".failed-signin").fadeIn(1000);
+                      }
+                      if($("."+obj).val() == "")
+                      {
+                          $("."+obj).siblings(".failed-tips").hide();
+                          $("."+obj).siblings(".successed-signin").hide();
+                          $("."+obj).siblings(".failed-signin").hide();
+                      }
+                      console.log(flag);
+                      if(flag == 2)
+                      {
+                          $(".signin-btn").removeClass("disabled");
+                      }
+
+                  })
+                  $("."+obj).focus(function(){
+                      if(rag.test($("."+obj).val()) == true)
+                      {
+                          flag--;
+                          $(".signin-btn").addClass("disabled");
+                      }
+                      $("."+obj).siblings(".failed-tips").fadeOut(1000);
+                      $("."+obj).siblings(".successed-signin").fadeOut(1000);
+                      $("."+obj).siblings(".failed-signin").fadeOut(1000);
+                  })
+
+              }
+
+              // 密码验证
+              var rag1 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{3,16}$/;
+              RAG("passward1",rag1);
+              // 用户名验证
+              var rag2 = /^[\S]{2,8}$/;
+              RAG("username",rag2);
+              // 邮箱验证
+              var rag3 = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+              RAG("Email",rag3);
+
+              $(".passward2").blur(function(){
+
+                  if($(".passward2").val() == $(".passward1").val())
+                  {
+                      flag++;
+                      $(".passward2").siblings(".successed-signin").fadeIn(1000);
+                  }
+                  else{
+                      flag--;
+                      $(".passward2").siblings(".failed-tips").fadeIn(1000);
+                      $(".passward2").siblings(".failed-signin").fadeIn(1000);
+                  }
+                  if($(".passward2").val() == "")
+                  {
+                      $(".passward2").siblings(".failed-tips").hide();
+                      $(".passward2").siblings(".successed-signin").hide();
+                      $(".passward2").siblings(".failed-signin").hide();
+                  }
+                  if(flag == 2)
+                  {
+                      console.log($(".signin-btn").hasClass("disabled") == false);
+                      $(".signin-btn").removeClass("disabled");
+                  }
+              })
+
+              $(".passward2").focus(function(){
+                  if($(".passward2").val() == $(".passward1").val())
+                  {
+                      flag--;
+                      $(".signin-btn").addClass("disabled");
+                  }
+                  $(".passward2").siblings(".failed-tips").fadeOut(1000);
+                  $(".passward2").siblings(".successed-signin").fadeOut(1000);
+                  $(".passward2").siblings(".failed-signin").fadeOut(1000);
+
+              })
+          })
+      </script>
+
+        <!-- ajax和遮罩层 -->
+        <script>
+          $(function(){
+            $(".forms").submit(function(e){
+                e.preventDefault();
+              });
+          // ajax $(".signin-btn").hasClass("disabled") == false
+
+            //     $(".signin-btn").click(function(){
+            //       $(".cover").show();
+            //       if($(".signin-btn").hasClass("disabled") == false)
+            //       {
+            //         $.ajax({
+            //           url: "./php/signin.php",
+            //           error: function(XMLHttpRequest, textStatus, errorThrown){
+            //             alert("返回状态"+XMLHttpRequest.status+",错误类型："+textStatus);
+            //           },
+            //           data:{
+            //             name: $(".username").val()
+            //           },
+            //           type: "post",
+            //           success: function(data){
+            //             // console.log(11);
+            //               // $(".signin-tips").html(data);
+            //               $(".cover").hide();
+            //           }
+            //
+            //       })
+            //       }
+            //
+            // })
+
+          })
+        </script>
+
+</body>
+</html>
