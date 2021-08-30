@@ -1,104 +1,103 @@
 /* 留言框 */
 body{
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
+
 .comment-show{
-
-    width: 800px;
-    height: 140px;
-    margin: 100px auto;
-    border-bottom: 2px solid rgba(0,0,0,.1);
-
+  width: 800px;
+  height: 140px;
+  margin: 100px auto;
+  border-bottom: 2px solid rgba(0,0,0,.1);
 }
+
 .comment-textarea{
-    float: left;
-    padding:   10px;
-    margin-top: 10px;
-    margin-left: 10px;
-    border-radius: 4px;
-    resize: none;
-    outline: none;
-    background-color: #f4f0f0;
-    border: 1px solid #e5e9ef;
-    font-size: 12px;
-    height: 80px;
-    width: 600px;
-    overflow: auto;
-
+  float: left;
+  padding:   10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  background-color: #f4f0f0;
+  border: 1px solid #e5e9ef;
+  font-size: 12px;
+  height: 80px;
+  width: 600px;
+  overflow: auto;
 }
+
 .comment-textarea:hover{
-
-    background-color: rgba(0,0,0,0);
-    border-color: skyblue;
-
+  background-color: rgba(0,0,0,0);
+  border-color: skyblue;
 }
+
 .comment-submit{
-
-    outline: none !important;
-    float: right;
-    padding: 13px;
-    margin-top: 40px;
-    margin-right: 100px;
-
+  outline: none !important;
+  float: right;
+  padding: 13px;
+  margin-top: 40px;
+  margin-right: 100px;
 }
 
 /* 留言 */
 .comment-content{
-    margin: 0px auto;
-    width: 800px;
+  margin: 0px auto;
+  width: 800px;
 }
+
 .comment-content li{
-    position: relative;
-    margin-top: 40px;
-    width: 800px;
-    height: 151px;
+  position: relative;
+  margin-top: 40px;
+  width: 800px;
+  height: 151px;
 }
+
 .comment-content li img{
-
-    position: absolute;
-    left: 0px;
-    width: 45px;
-    height: 45px;
-
+  position: absolute;
+  left: 0px;
+  width: 45px;
+  height: 45px;
 }
+
 .comment-content textarea{
-    
-    height: 150px;
-    padding: 10px;
-    left: 55px;
-    position: absolute;
-    resize: none;
-    outline: none;
-    background-color: #f4f0f0;
-    border: 1px solid #e5e9ef;
-    border-radius: 8px;
-    font-size: 18px;
+  height: 150px;
+  padding: 10px;
+  left: 55px;
+  position: absolute;
+  resize: none;
+  outline: none;
+  background-color: #f4f0f0;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  font-size: 18px;
 }
-.comment-content li #comment-like{
-    position: absolute;
-    cursor: pointer;
-    text-align: center;
-    line-height: 40px;
-    width: 40px;
-    height: 40px;
-    font-size : 24px;
-    right: 85px;
-    top: 105px;
-    zoom: 1;
-    user-select: none;
-}
-.comment-hot{
-    float: left;
-    margin-left: 40px;
-    margin-top: -50px;
-    width: 250px;
-    height: 250px;
-    background-image: url("../image/test.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0px 0px 50px rgba(53, 52, 52, 0.8);
 
+.comment-content li #comment-like{
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  font-size : 24px;
+  right: 85px;
+  top: 105px;
+  zoom: 1;
+  user-select: none;
 }
+
+.comment-hot{
+  float: left;
+  margin-left: 40px;
+  margin-top: -50px;
+  width: 250px;
+  height: 250px;
+  background-image: url("../image/test.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 50px rgba(53, 52, 52, 0.8);
+}
+
 .glyphicon-heart{
-    color: red;
+  color: red;
 }

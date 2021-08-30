@@ -27,12 +27,10 @@ public interface UserMapper {
     @Select("select * from user where token = #{token}")
     User findByToken(@Param("token") String token);
 
-
     @Select("select username from user where username=#{username}")
     List<String> exitUsername();
 
     @Select("select * from user where username = #{username}")
     User username_to_setToken(@Param("username") String username);
-
 
 }

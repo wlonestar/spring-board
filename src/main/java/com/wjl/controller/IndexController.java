@@ -15,9 +15,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.Random;
-
-import static org.ictclas4j.utility.GFCommon.random;
 
 @Controller
 public class IndexController {
@@ -78,11 +75,9 @@ public class IndexController {
                 "/image/96.png",
                 "/image/97.png",
                 "/image/98.png"};
-//        comment.setPhoto(url[random(0,8)]);
         comment.setPhoto(url[1]);
         commentMapper.addComment(comment);
         return "redirect:/homePage#comment";
-
     }
 
 }

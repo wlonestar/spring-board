@@ -1,93 +1,108 @@
 body{
-    background-image: url(../image/08.jpeg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+  background-image: url(../image/08.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
+
 /* 导航栏 */
 .nav{
-    /* position: relative; */
-    height: 80px;
-    background: rgba(0,0,0,.3);
+  /* position: relative; */
+  height: 80px;
+  background: rgba(0,0,0,.3);
 }
+
 .nav:hover{
-    background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.8);
 }
+
 .nav .nav-back{
-    margin-left: 150px;
-    height: 100%;
+  margin-left: 150px;
+  height: 100%;
 }
+
 .nav li{
-    float: left;
-    height: 80px;
-    width: 100px;
-    line-height: 80px;
-    text-align: center;
-    font-size: 28px;
+  float: left;
+  height: 80px;
+  width: 100px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 28px;
 }
+
 .nav .nav-back li a{
-    color: skyblue;
+  color: skyblue;
 }
+
 .nav .nav-back li:hover{
-    background-color: skyblue;
+  background-color: skyblue;
 }
+
 .nav .nav-back li:hover a{
-    color: orangered;
+  color: orangered;
 }
+
 .nav .nav-back .nav-signup{
-    float: right;
-    margin-right: 100px;
+  float: right;
+  margin-right: 100px;
 }
+
 /* 登录表单  */
 .form-horizontal{
-    margin: 220px 275px;
-    width: 500px;
-    height: 330px;
-    background-color: rgba(255,255,255,.7);
-    box-sizing: border-box;
-    padding: 0px 15px;
+  margin: 220px 275px;
+  width: 500px;
+  height: 330px;
+  background-color: rgba(255,255,255,.7);
+  box-sizing: border-box;
+  padding: 0px 15px;
 }
-.btn-signup{
-    width: 80px;
-    height: 30px;
-    margin-top: 5px;
-    margin-left: 150px;
-    background-color: skyblue;
-    border-radius: 20px;
-}
-.btn-signup a{
-    display: inline-block;
-    width: 70px;
-    height: 30px;
-    text-decoration: none;
-    margin-top: -6px;
-    margin-left: -8px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 20px;
-    color: #121212;
-}
-.btn-signup a:hover{
-    color: rgb(134, 52, 128);
-}
-.btn-signin{
-    width: 80px;
-    height: 35px;
-    padding: 0;
-}
-.btn-signin a{
-    display: inline-block;
-    text-decoration: none;
 
-    width: 80px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    border-radius: 20px;
-    color: #121212;
+.btn-signup{
+  width: 80px;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 150px;
+  background-color: skyblue;
+  border-radius: 20px;
 }
+
+.btn-signup a{
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  text-decoration: none;
+  margin-top: -6px;
+  margin-left: -8px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 20px;
+  color: #121212;
+}
+
+.btn-signup a:hover{
+  color: rgb(134, 52, 128);
+}
+
+.btn-signin{
+  width: 80px;
+  height: 35px;
+  padding: 0;
+}
+
+.btn-signin a{
+  display: inline-block;
+  text-decoration: none;
+  width: 80px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 20px;
+  color: #121212;
+}
+
 .btn-signin a:hover{
-    color: rgb(134, 52, 128);
+  color: rgb(134, 52, 128);
 }
+
 .form-title{
-    padding: 25px 20px;
+  padding: 25px 20px;
 }
