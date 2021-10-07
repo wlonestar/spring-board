@@ -1,9 +1,9 @@
 package com.wjl.controller;
 
-import com.wjl.mapper.CommentMapper;
-import com.wjl.mapper.UserMapper;
-import com.wjl.model.Comment;
-import com.wjl.model.User;
+import com.wjl.entity.Comment;
+import com.wjl.entity.User;
+import com.wjl.service.intf.CommentService;
+import com.wjl.service.intf.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +20,10 @@ import java.util.Date;
 public class IndexController {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     @Autowired
-    private CommentMapper commentMapper;
+    private CommentService commentService;
 
     @ModelAttribute
     Comment setComment() {
@@ -33,13 +33,13 @@ public class IndexController {
     @GetMapping("/homePage")
     public String index(Model model) {
         Comment comment = new Comment();
-        model.addAttribute("list", commentMapper.showAllComment());
+        model.addAttribute("list", commentService.findAll());
         return "index";
     }
 
     @PostMapping("/homePage")
     public String listCommentByName(Model model) {
-        model.addAttribute("list", commentMapper.showAllComment());
+        model.addAttribute("list", commentService.findAll());
         return "index";
     }
 
@@ -58,7 +58,7 @@ public class IndexController {
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals("token")){
                 String token = cookie.getValue();
-                user = userMapper.findByToken(token);
+                user = userService.findByToken(token);
                 break;
             }
         }
@@ -76,7 +76,7 @@ public class IndexController {
                 "/image/97.png",
                 "/image/98.png"};
         comment.setPhoto(url[1]);
-        commentMapper.addComment(comment);
+        commentService.add(comment);
         return "redirect:/homePage#comment";
     }
 

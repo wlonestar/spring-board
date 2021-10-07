@@ -1,7 +1,7 @@
 package com.wjl.controller;
 
-import com.wjl.mapper.UserMapper;
-import com.wjl.model.User;
+import com.wjl.entity.User;
+import com.wjl.service.intf.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import java.util.UUID;
 public class RegisterController {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     @GetMapping("/toRegister")
     public String toRegister() {
@@ -25,20 +25,19 @@ public class RegisterController {
     @RequestMapping("/registerUser")
     public String register(User user, Map<String, Object> map) {
         user.setToken(UUID.randomUUID().toString());
-        List<String> userList = userMapper.exitUsername();
+        List<String> userList = userService.findUsername();
         if (userList.contains(user.getUsername())) {
             map.put("msg", "用户名[ "+user.getUsername()+" ]"+"已存在, 请重新注册");
             return "/register";
         } else {
-            User userCheck = userMapper.findByUsername(user.getUsername());
+            User userCheck = userService.findByUsername(user.getUsername());
             if (userCheck == null) {
-                userMapper.add(user);
+                userService.add(user);
                 return "/login";
             } else {
                 return "redirect:/homePage";
             }
         }
     }
-
 
 }

@@ -1,9 +1,9 @@
 package com.wjl.controller;
 
-import com.wjl.mapper.UserMapper;
-import com.wjl.model.User;
-import org.apache.ibatis.annotations.Param;
+import com.wjl.entity.User;
+import com.wjl.service.intf.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ import java.util.Map;
 public class LoginController {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     @GetMapping("/")
     public String index() {
@@ -35,10 +35,10 @@ public class LoginController {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        User check_login = userMapper.findByUsername_login(username, password);
+        User check_login = userService.findByUsernameAndPassword(username, password);
 
         if (check_login != null) {
-            User user_token = userMapper.username_to_setToken(username);
+            User user_token = userService.findByUsername(username);
             String token = user_token.getToken();
             response.addCookie(new Cookie("token", token));
             return "redirect:/homePage";
@@ -46,7 +46,6 @@ public class LoginController {
             map.put("msg", "用户名或密码错误，请重新登录");
             return "/login";
         }
-
     }
 
 }
